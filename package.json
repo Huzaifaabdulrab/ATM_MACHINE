@@ -1,6 +1,6 @@
 {
   "name": "atm-machine-project3",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "3rd assigment project GIAIC",
   "main": "index.js",
   "type": "module",
