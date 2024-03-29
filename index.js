@@ -51,7 +51,7 @@ if (userPin.pin === pin) {
             {
                 name: "cash",
                 type: "list",
-                message: chalk.underline("choose you amount"),
+                message: chalk.underline("Choose you amount"),
                 choices: ["1000", "2000", "5000", "10000"]
             }
         ]);
