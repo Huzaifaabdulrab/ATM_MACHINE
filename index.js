@@ -16,11 +16,12 @@ let userPin = await inquirer.prompt([
     {
         name: "pin",
         type: "number",
-        message: chalk.blue("please Enter pin code"),
+        message: chalk.blue("Please enter pin code"),
     },
 ]);
 if (userPin.pin === pin) {
-    console.log(chalk.white.underline(`is correct pin code wellcome to your ATM account!`));
+    console.log(chalk.white.bold(`correct pin code wellcome to your ATM account!`));
+    console.log(chalk.green(`Your current balance is ${myBalance}$`));
     let operation = await inquirer.prompt([
         {
             name: "operation",
@@ -34,15 +35,15 @@ if (userPin.pin === pin) {
             {
                 name: "amount",
                 type: "number",
-                message: chalk.underline(("enter your amount")),
+                message: chalk.underline(("Enter your amount")),
             }
         ]);
         if (ammountAns.amount >= 0 && ammountAns.amount <= myBalance) {
             myBalance -= ammountAns.amount;
-            console.log(chalk.bold.yellowBright(`your remaing balanced is ${myBalance}$`));
+            console.log(chalk.bold.yellowBright(`Your remaing balanced is ${myBalance}$`));
         }
         else {
-            console.log(chalk.red.overline(`please drow a valid ammount your current amount is ${myBalance}$`));
+            console.log(chalk.red.overline(`Please drow a valid ammount your current amount is ${myBalance}$`));
         }
     }
     if (operation.operation === "faster cash") {
@@ -56,13 +57,13 @@ if (userPin.pin === pin) {
         ]);
         if (cashlist.cash === cashlist.cash) {
             myBalance -= cashlist.cash;
-            console.log(chalk.bold.yellowBright(`your remaing balanced is ${myBalance}$`));
+            console.log(chalk.bold.yellowBright(`Your remaing balanced is ${myBalance}$`));
         }
     }
     else if (operation.operation === "cheak balance") {
-        console.log(chalk.bold.yellowBright(`your balace is ${myBalance}$`));
+        console.log(chalk.bold.yellowBright(`Your balace is ${myBalance}$`));
     }
 }
 else {
-    console.log(chalk.red(`incorrect pin`));
+    console.log(chalk.red(`Incorrect pin`));
 }
